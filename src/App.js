@@ -15,8 +15,8 @@ function App() {
   const [country, setCountry] = useState('worldwide');
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
-  const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
-  const [mapZoom, setMapZoom] = useState(3);
+  const [mapCenter, setMapCenter] = useState({ lat: 21.0000, lng: 78.0000 });
+  const [mapZoom, setMapZoom] = useState(4);
   const [mapCountries, setMapCountries] = useState([]);
   const [casesType, setCasesType] = useState('cases');
 
@@ -72,8 +72,6 @@ function App() {
         });
   };
 
-  console.log('countryInfo', countryInfo);
-
   return (
     <div className="app">
 
@@ -83,7 +81,7 @@ function App() {
         <div className="app__header">
           <h1>COVID-19 Tracker</h1>
           <FormControl className="app__dropdown">
-            <Select variant="outlined" onClick={onCountryChange} value={country}>
+            <Select variant="outlined" onChange={onCountryChange} value={country}>
               <MenuItem value="worldwide">Worldwide</MenuItem>
               {/* List through the countries and show the dropdown list of of the options */}
               {countries.map( (country) => (
